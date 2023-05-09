@@ -25,6 +25,7 @@ pipeline {
             sh './qshell account ${QINIU_AK} ${QINIU_SK} my'
             sh './qshell qupload2 --bucket wechat-video-corly-cc --src-dir public --overwrite'
             sh 'echo "https://wechat-video.corly.cc/" > clearcdnurl.log'
+            sh 'echo "https://wechat-video.corly.cc/assets/css/style.css" >> clearcdnurl.log'
             sh './qshell cdnrefresh -i clearcdnurl.log'
         }
       }
