@@ -5,7 +5,7 @@ pipeline {
       steps {
         checkout([
           $class: 'GitSCM',
-          branches: [[name: GIT_TAG]],
+          branches: [[name: GIT_BUILD_REF]],
           userRemoteConfigs: [[
             url: GIT_REPO_URL,
             credentialsId: CREDENTIALS_ID
